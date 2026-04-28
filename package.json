@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Comprehensive MCP server for web scraping and data extraction. 40+ tools including Google Search, Amazon, Zillow, Airbnb, and more.",
   "type": "module",
+  "main": "./src/index.js",
   "keywords": [
     "mcp", "model-context-protocol", "hasdata", "web-scraping", "data-extraction",
     "serp-api", "google-search", "google-maps", "google-flights", "google-trends",
@@ -23,5 +24,8 @@
     "description": "MCP server for web scraping and data extraction",
     "transport": "http",
     "url": "https://mcp.hasdata.com/api/mcp"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1"
   }
 }
