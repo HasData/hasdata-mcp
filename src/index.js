@@ -28,13 +28,16 @@ async function forwardToHasData(request) {
     body: JSON.stringify(cleanRequest)
   });
 
-  const responseData = await response.json();
+  const text = await response.text();
 
-  if (!response.ok) {
-    throw new Error(`HasData API error: ${response.status} - ${JSON.stringify(responseData)}`);
+  if (text.includes('data:')) {
+    const dataLine = text.split('\n').find(line => line.startsWith('data: '));
+    if (dataLine) {
+      return JSON.parse(dataLine.replace('data: ', ''));
+    }
   }
 
-  return responseData;
+  return JSON.parse(text);
 }
 
 server.setRequestHandler(ListToolsRequestSchema, async (request) => {
