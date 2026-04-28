@@ -1,11 +1,20 @@
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { ProxyServer } from "@modelcontextprotocol/sdk/server/proxy.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
 
-const server = new Server(
-  { name: "hasdata-mcp", version: "1.0.0" },
-  { capabilities: { tools: {} } }
+const remoteTransport = new SSEClientTransport(
+  new URL("https://mcp.hasdata.com/api/mcp"),
+  {
+    eventSourceInitDict: {
+      headers: {
+        "x-api-key": process.env.HASDATA_API_KEY 
+      }
+    }
+  }
 );
 
 const transport = new StdioServerTransport();
-await server.connect(transport);
-console.error("HasData MCP Server running on stdio");
+const proxy = new ProxyServer(transport, remoteTransport);
+
+await proxy.listen();
+console.error("HasData Cloud Redirect is active!");
