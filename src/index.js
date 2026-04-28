@@ -1,45 +1,55 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
 import { ListToolsRequestSchema, CallToolRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
-const apiKey = process.env.HASDATA_API_KEY;
-
-const remoteTransport = new SSEClientTransport(
-  new URL("https://mcp.hasdata.com/api/mcp"),
-  {
-    eventSourceInitDict: {
-      headers: {
-        "x-api-key": apiKey
-      }
-    }
-  }
-);
+const HASDATA_ENDPOINT = "https://mcp.hasdata.com/api/mcp";
+const API_KEY = process.env.HASDATA_API_KEY;
 
 const server = new Server(
   { name: "hasdata-mcp-bridge", version: "1.0.0" },
   { capabilities: { tools: {} } }
 );
 
-try {
-  console.error("Connecting to HasData Cloud...");
-  await remoteTransport.start();
-  console.error("Cloud connection established!");
-
-  server.setRequestHandler(ListToolsRequestSchema, async (request) => {
-    console.error("Forwarding ListTools request...");
-    return await remoteTransport.sendRequest(request);
+async function forwardToHasData(request) {
+  const response = await fetch(HASDATA_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': API_KEY
+    },
+    body: JSON.stringify(request)
   });
 
-  server.setRequestHandler(CallToolRequestSchema, async (request) => {
-    console.error(`Forwarding CallTool: ${request.params.name}`);
-    return await remoteTransport.sendRequest(request);
-  });
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`HasData API error: ${response.status} - ${errorText}`);
+  }
 
-} catch (error) {
-  console.error("CRITICAL: Could not connect to Cloud:", error.message);
-  server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: [] }));
+  return await response.json();
 }
+
+server.setRequestHandler(ListToolsRequestSchema, async (request) => {
+  try {
+    console.error("Fetching tools from HasData...");
+    const data = await forwardToHasData(request);
+    return data.result; 
+  } catch (error) {
+    console.error("Failed to fetch tools:", error.message);
+    return { tools: [] };
+  }
+});
+
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  try {
+    console.error(`Calling tool: ${request.params.name}`);
+    const data = await forwardToHasData(request);
+    return data.result;
+  } catch (error) {
+    console.error("Tool execution failed:", error.message);
+    throw error;
+  }
+});
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
+console.error("HasData Manual Bridge is online!");
