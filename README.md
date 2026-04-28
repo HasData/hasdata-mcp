@@ -5,7 +5,7 @@
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-6366f1?style=flat-square)](https://modelcontextprotocol.io)
 [![Tools](https://img.shields.io/badge/Tools-40-10b981?style=flat-square)](#tools)
 [![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-0ea5e9?style=flat-square)](https://mcp.hasdata.com/api/mcp)
-[![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
+[![HasData/hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
 
 Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp) scraping and search APIs. Connect any MCP-compatible AI client to 40 ready-to-use data tools.
 
