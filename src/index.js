@@ -11,6 +11,13 @@ const server = new Server(
 );
 
 async function forwardToHasData(request) {
+  const cleanRequest = {
+    jsonrpc: "2.0",
+    id: request.id ?? Math.floor(Math.random() * 1000),
+    method: request.method,
+    params: request.params || {}
+  };
+
   const response = await fetch(HASDATA_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -18,15 +25,16 @@ async function forwardToHasData(request) {
       'x-api-key': API_KEY,
       'Accept': 'application/json, text/event-stream'
     },
-    body: JSON.stringify(request)
+    body: JSON.stringify(cleanRequest)
   });
 
+  const responseData = await response.json();
+
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`HasData API error: ${response.status} - ${errorText}`);
+    throw new Error(`HasData API error: ${response.status} - ${JSON.stringify(responseData)}`);
   }
 
-  return await response.json();
+  return responseData;
 }
 
 server.setRequestHandler(ListToolsRequestSchema, async (request) => {
