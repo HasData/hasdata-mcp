@@ -15,7 +15,8 @@ async function forwardToHasData(request) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': API_KEY
+      'x-api-key': API_KEY,
+      'Accept': 'application/json, text/event-stream'
     },
     body: JSON.stringify(request)
   });
