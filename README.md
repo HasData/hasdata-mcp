@@ -50,6 +50,23 @@ claude mcp add hasdata -t http https://mcp.hasdata.com/api/mcp --header "x-api-k
 }
 ```
 
+**Cline.** Add to `~/settings/cline_mcp_settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "hasdata": {
+      "url": "https://mcp.hasdata.com/api/mcp",
+      "type": "streamableHttp",
+      "headers": {
+        "x-api-key": "<your-api-key>"
+      },
+      "disabled": false      
+    }
+  }
+}
+```
+
 **Any other MCP client** that supports streamable HTTP with custom headers:
 
 | Field | Value |
