@@ -50,7 +50,7 @@ claude mcp add hasdata -t http https://mcp.hasdata.com/api/mcp --header "x-api-k
 }
 ```
 
-**Cline.** Add to `~/settings/cline_mcp_settings.json`:
+**Cline.** Add the hasdata server to your Cline MCP settings file:
 
 ```json
 {
