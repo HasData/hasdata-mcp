@@ -1,0 +1,13 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.hasdata/hasdata",
+  "title": "HasData",
+  "description": "All HasData scraping tools in one MCP server: Google, TikTok, Instagram, maps, e-commerce and more.",
+  "version": "1.0.0",
+  "websiteUrl": "https://hasdata.com",
+  "repository": { "url": "https://github.com/HasData/hasdata-mcp", "source": "github" },
+  "remotes": [
+    { "type": "streamable-http", "url": "https://mcp.hasdata.com/api/mcp",
+      "headers": [ { "name": "x-api-key", "description": "HasData API key from app.hasdata.com. Free trial, no card.", "isRequired": true, "isSecret": true } ] }
+  ]
+}
