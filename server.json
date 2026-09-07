@@ -7,7 +7,7 @@
   "websiteUrl": "https://hasdata.com",
   "repository": { "url": "https://github.com/HasData/hasdata-mcp", "source": "github" },
   "remotes": [
-    { "type": "streamable-http", "url": "https://mcp.hasdata.com/api/mcp",
-      "headers": [ { "name": "x-api-key", "description": "HasData API key from app.hasdata.com. Free trial, no card.", "isRequired": true, "isSecret": true } ] }
+    { "type": "streamable-http", "url": "https://mcp.hasdata.com/mcp",
+      "headers": [ { "name": "x-api-key", "description": "HasData API key from app.hasdata.com (optional when the client signs in with OAuth). Free trial, no card.", "isRequired": false, "isSecret": true } ] }
   ]
 }
