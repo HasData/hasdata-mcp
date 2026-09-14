@@ -3,11 +3,11 @@
 # HasData MCP Server
 
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-6366f1?style=flat-square)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-62-10b981?style=flat-square)](#tools)
+[![Tools](https://img.shields.io/badge/Tools-63-10b981?style=flat-square)](#tools)
 [![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-0ea5e9?style=flat-square)](https://mcp.hasdata.com/mcp)
 [![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
 
-Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp) scraping and search APIs. Connect any MCP-compatible AI client to 62 ready-to-use data tools.
+Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp) scraping and search APIs. Connect any MCP-compatible AI client to 63 ready-to-use data tools, or pick a single site from the [standalone servers](#one-site-per-server).
 
 ---
 
@@ -95,7 +95,7 @@ claude mcp add --transport http hasdata https://mcp.hasdata.com/mcp --header "x-
 
 Requests without OAuth or a valid key return `401 Unauthorized`.
 
-Need fewer tools in your client? Limit the exposed APIs with the `apis` query parameter, e.g. `https://mcp.hasdata.com/mcp?apis=amazon,google_maps`.
+Need fewer tools in your client? Limit the exposed APIs with the `apis` query parameter, e.g. `https://mcp.hasdata.com/mcp?apis=amazon,google_maps`. The `apis` key for every site is listed in [One site per server](#one-site-per-server).
 
 ---
 
@@ -133,13 +133,15 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 
 ## Tools
 
-62 tools across search, e-commerce, maps, travel, real estate, jobs, social, and more.
+63 tools across search, e-commerce, maps, travel, real estate, jobs, social, and more. Every group below also ships as standalone servers, one per site, with the same tools behind a shorter URL.
 
 ### Web
 
 | Tool | Description |
 |---|---|
 | `web_scraping_web_scraping` | Scrape any URL with optional parameters |
+
+Standalone server for this group: [web-scraping-mcp](https://github.com/HasData/web-scraping-mcp).
 
 ### Google
 
@@ -168,12 +170,16 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 | `google_travel_flights` | Google Flights results |
 | `google_travel_hotels` | Google Hotels results |
 
+Standalone servers for this group: [google-search-mcp](https://github.com/HasData/google-search-mcp) (all `google_serp_*` tools), [google-images-mcp](https://github.com/HasData/google-images-mcp), [google-maps-mcp](https://github.com/HasData/google-maps-mcp), [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp), [google-trends-mcp](https://github.com/HasData/google-trends-mcp), [google-flights-mcp](https://github.com/HasData/google-flights-mcp). Google Hotels is reachable through `?apis=google_travel_hotels`.
+
 ### Other search engines
 
 | Tool | Description |
 |---|---|
 | `bing_serp` | Bing Search results |
 | `duckduckgo_serp` | DuckDuckGo Search results |
+
+Standalone servers for this group: [bing-mcp](https://github.com/HasData/bing-mcp), [duckduckgo-mcp](https://github.com/HasData/duckduckgo-mcp).
 
 ### E-commerce
 
@@ -190,6 +196,8 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 | `shopify_products` | Shopify store products |
 | `shopify_collections` | Shopify store collections |
 
+Standalone servers for this group: [amazon-mcp](https://github.com/HasData/amazon-mcp), [walmart-mcp](https://github.com/HasData/walmart-mcp), [shopify-mcp](https://github.com/HasData/shopify-mcp).
+
 ### Real Estate
 
 | Tool | Description |
@@ -199,6 +207,8 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 | `redfin_listing` | Redfin listing search |
 | `redfin_property` | Redfin property details |
 
+Standalone servers for this group: [zillow-mcp](https://github.com/HasData/zillow-mcp), [redfin-mcp](https://github.com/HasData/redfin-mcp).
+
 ### Jobs
 
 | Tool | Description |
@@ -207,6 +217,8 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 | `indeed_job` | Indeed job details |
 | `glassdoor_listing` | Glassdoor job listings |
 | `glassdoor_job` | Glassdoor job details |
+
+Standalone servers for this group: [indeed-mcp](https://github.com/HasData/indeed-mcp), [glassdoor-mcp](https://github.com/HasData/glassdoor-mcp).
 
 ### Travel & Local
 
@@ -222,10 +234,13 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 | `yellowpages_search` | YellowPages search results |
 | `yellowpages_place` | YellowPages place details |
 
+Standalone servers for this group: [airbnb-mcp](https://github.com/HasData/airbnb-mcp), [booking-mcp](https://github.com/HasData/booking-mcp), [yelp-mcp](https://github.com/HasData/yelp-mcp), [yellowpages-mcp](https://github.com/HasData/yellowpages-mcp).
+
 ### Social & Video
 
 | Tool | Description |
 |---|---|
+| `facebook_profile` | Facebook public page or profile details |
 | `instagram_profile` | Instagram public profile details |
 | `instagram_posts` | Instagram public account posts |
 | `tiktok_profile` | TikTok public profile details |
@@ -236,6 +251,43 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 | `youtube_video` | YouTube video details |
 | `youtube_channel` | YouTube channel data |
 | `youtube_transcript` | YouTube video transcript |
+
+Standalone servers for this group: [facebook-mcp](https://github.com/HasData/facebook-mcp), [instagram-mcp](https://github.com/HasData/instagram-mcp), [tiktok-mcp](https://github.com/HasData/tiktok-mcp), [youtube-mcp](https://github.com/HasData/youtube-mcp).
+
+---
+
+## One site per server
+
+If your agent only needs one site, use its standalone server instead of the full set. Each one is the same hosted endpoint filtered with the `apis` parameter, so the tools, the schemas and the billing are identical, and the model sees a short tool list. Every standalone server also ships as an npm and a PyPI package for clients that want a local stdio launcher, and is listed in the [official MCP registry](https://registry.modelcontextprotocol.io) under `com.hasdata/<name>`.
+
+| Site | Repository | npm | PyPI | `apis` key |
+|---|---|---|---|---|
+| Airbnb | [airbnb-mcp](https://github.com/HasData/airbnb-mcp) | `@hasdata/airbnb-mcp` | `hasdata-airbnb-mcp` | `airbnb` |
+| Amazon | [amazon-mcp](https://github.com/HasData/amazon-mcp) | `@hasdata/amazon-mcp` | `hasdata-amazon-mcp` | `amazon` |
+| Bing | [bing-mcp](https://github.com/HasData/bing-mcp) | `@hasdata/bing-mcp` | `hasdata-bing-mcp` | `bing` |
+| Booking.com | [booking-mcp](https://github.com/HasData/booking-mcp) | `@hasdata/booking-mcp` | `hasdata-booking-mcp` | `booking` |
+| DuckDuckGo | [duckduckgo-mcp](https://github.com/HasData/duckduckgo-mcp) | `@hasdata/duckduckgo-mcp` | `hasdata-duckduckgo-mcp` | `duckduckgo` |
+| Facebook | [facebook-mcp](https://github.com/HasData/facebook-mcp) | `@hasdata/facebook-mcp` | `hasdata-facebook-mcp` | `facebook` |
+| Glassdoor | [glassdoor-mcp](https://github.com/HasData/glassdoor-mcp) | `@hasdata/glassdoor-mcp` | `hasdata-glassdoor-mcp` | `glassdoor` |
+| Google Flights | [google-flights-mcp](https://github.com/HasData/google-flights-mcp) | `@hasdata/google-flights-mcp` | `hasdata-google-flights-mcp` | `google_travel_flights` |
+| Google Images | [google-images-mcp](https://github.com/HasData/google-images-mcp) | `@hasdata/google-images-mcp` | `hasdata-google-images-mcp` | `google_images` |
+| Google Maps | [google-maps-mcp](https://github.com/HasData/google-maps-mcp) | `@hasdata/google-maps-mcp` | `hasdata-google-maps-mcp` | `google_maps` |
+| Google Scholar | [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp) | `@hasdata/google-scholar-mcp` | `hasdata-google-scholar-mcp` | `google_scholar` |
+| Google Search | [google-search-mcp](https://github.com/HasData/google-search-mcp) | `@hasdata/google-search-mcp` | `hasdata-google-search-mcp` | `google_serp` |
+| Google Trends | [google-trends-mcp](https://github.com/HasData/google-trends-mcp) | `@hasdata/google-trends-mcp` | `hasdata-google-trends-mcp` | `google_trends` |
+| Indeed | [indeed-mcp](https://github.com/HasData/indeed-mcp) | `@hasdata/indeed-mcp` | `hasdata-indeed-mcp` | `indeed` |
+| Instagram | [instagram-mcp](https://github.com/HasData/instagram-mcp) | `@hasdata/instagram-mcp` | `hasdata-instagram-mcp` | `instagram` |
+| Redfin | [redfin-mcp](https://github.com/HasData/redfin-mcp) | `@hasdata/redfin-mcp` | `hasdata-redfin-mcp` | `redfin` |
+| Shopify | [shopify-mcp](https://github.com/HasData/shopify-mcp) | `@hasdata/shopify-mcp` | `hasdata-shopify-mcp` | `shopify` |
+| TikTok | [tiktok-mcp](https://github.com/HasData/tiktok-mcp) | `@hasdata/tiktok-mcp` | `hasdata-tiktok-mcp` | `tiktok` |
+| Walmart | [walmart-mcp](https://github.com/HasData/walmart-mcp) | `@hasdata/walmart-mcp` | `hasdata-walmart-mcp` | `walmart` |
+| Web Scraping | [web-scraping-mcp](https://github.com/HasData/web-scraping-mcp) | `@hasdata/web-scraping-mcp` | `hasdata-web-scraping-mcp` | `web_scraping` |
+| Yellow Pages | [yellowpages-mcp](https://github.com/HasData/yellowpages-mcp) | `@hasdata/yellowpages-mcp` | `hasdata-yellowpages-mcp` | `yellowpages` |
+| Yelp | [yelp-mcp](https://github.com/HasData/yelp-mcp) | `@hasdata/yelp-mcp` | `hasdata-yelp-mcp` | `yelp` |
+| YouTube | [youtube-mcp](https://github.com/HasData/youtube-mcp) | `@hasdata/youtube-mcp` | `hasdata-youtube-mcp` | `youtube` |
+| Zillow | [zillow-mcp](https://github.com/HasData/zillow-mcp) | `@hasdata/zillow-mcp` | `hasdata-zillow-mcp` | `zillow` |
+
+The remote URL for any of them is `https://mcp.hasdata.com/mcp?apis=<key>`, and keys can be combined with commas.
 
 ---
 
