@@ -170,7 +170,7 @@ Standalone server for this group: [web-scraping-mcp](https://github.com/HasData/
 | `google_travel_flights` | Google Flights results |
 | `google_travel_hotels` | Google Hotels results |
 
-Standalone servers for this group: [google-search-mcp](https://github.com/HasData/google-search-mcp) (all `google_serp_*` tools), [google-images-mcp](https://github.com/HasData/google-images-mcp), [google-maps-mcp](https://github.com/HasData/google-maps-mcp), [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp), [google-trends-mcp](https://github.com/HasData/google-trends-mcp), [google-flights-mcp](https://github.com/HasData/google-flights-mcp). Google Hotels is reachable through `?apis=google_travel_hotels`.
+Standalone servers for this group: [google-search-mcp](https://github.com/HasData/google-search-mcp) (all `google_serp_*` tools), [google-images-mcp](https://github.com/HasData/google-images-mcp), [google-maps-mcp](https://github.com/HasData/google-maps-mcp), [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp), [google-trends-mcp](https://github.com/HasData/google-trends-mcp), [google-flights-mcp](https://github.com/HasData/google-flights-mcp), [google-hotels-mcp](https://github.com/HasData/google-hotels-mcp).
 
 ### Other search engines
 
@@ -270,6 +270,7 @@ If your agent only needs one site, use its standalone server instead of the full
 | Facebook | [facebook-mcp](https://github.com/HasData/facebook-mcp) | `@hasdata/facebook-mcp` | `hasdata-facebook-mcp` | `facebook` |
 | Glassdoor | [glassdoor-mcp](https://github.com/HasData/glassdoor-mcp) | `@hasdata/glassdoor-mcp` | `hasdata-glassdoor-mcp` | `glassdoor` |
 | Google Flights | [google-flights-mcp](https://github.com/HasData/google-flights-mcp) | `@hasdata/google-flights-mcp` | `hasdata-google-flights-mcp` | `google_travel_flights` |
+| Google Hotels | [google-hotels-mcp](https://github.com/HasData/google-hotels-mcp) | `@hasdata/google-hotels-mcp` | `hasdata-google-hotels-mcp` | `google_travel_hotels` |
 | Google Images | [google-images-mcp](https://github.com/HasData/google-images-mcp) | `@hasdata/google-images-mcp` | `hasdata-google-images-mcp` | `google_images` |
 | Google Maps | [google-maps-mcp](https://github.com/HasData/google-maps-mcp) | `@hasdata/google-maps-mcp` | `hasdata-google-maps-mcp` | `google_maps` |
 | Google Scholar | [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp) | `@hasdata/google-scholar-mcp` | `hasdata-google-scholar-mcp` | `google_scholar` |
