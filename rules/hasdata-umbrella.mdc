@@ -1,0 +1,28 @@
+---
+description: How to work with the full HasData MCP server, which exposes every scraping tool behind one endpoint
+alwaysApply: false
+---
+
+# HasData through one endpoint
+
+`https://mcp.hasdata.com/mcp` exposes every HasData tool at once, 63 of them, across search, e-commerce, maps, travel, real estate, jobs and social. Authentication is an `x-api-key` header or OAuth 2.1.
+
+## Narrow the surface before you connect
+
+`?apis=` filters the endpoint to the services you actually need. `?apis=amazon` returns five tools instead of sixty-three, and several services combine either comma-separated or by repeating the parameter, so `?apis=amazon,walmart` and `?apis=amazon&apis=walmart` both return eight.
+
+An unknown service name is an error rather than an empty list, so a typo fails loudly.
+
+Filtering is worth doing. A model choosing among sixty-three similarly shaped tools picks wrong more often than one choosing among five, and every tool description sits in the context window whether or not it gets called.
+
+## Tool names say where a tool lives
+
+Names follow `hasdata_<service>_<group>_<method>`, as in `hasdata_amazon_search_getSearchResults` or `hasdata_google_travel_hotels_getGoogleHotels`. The service segment is what `?apis=` takes, and it does not always match the product name: Google Search is `google_serp`, flights are `google_travel_flights` and hotels are `google_travel_hotels`.
+
+## What is the same everywhere
+
+Every tool returns structured JSON rather than HTML, and every successful call spends credits from the connected account. A call that fails on validation is not billed.
+
+Each service also ships as a standalone server with the same tools behind a shorter URL, which is the better choice when a client only ever needs one site.
+
+Read the per-service rule when you work with a particular site. The traps are specific: prices are strings on Shopify, views are numbers in YouTube search and strings in the video call, and a blocked page on Web Scraping is a successful call with an empty body.
