@@ -2,7 +2,7 @@ import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { ListToolsRequestSchema, CallToolRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
-const HASDATA_ENDPOINT = "https://mcp.hasdata.com/api/mcp";
+const HASDATA_ENDPOINT = "https://mcp.hasdata.com/mcp";
 const API_KEY = process.env.HASDATA_API_KEY;
 
 const server = new Server(
