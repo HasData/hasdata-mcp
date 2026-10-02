@@ -1,4 +1,4 @@
-[![HasData_bannner](src/banner.png)](https://docs.hasdata.com/mcp-server/?utm_source=github&utm_medium=syndication&utm_campaign=mcp)
+[![HasData_bannner](src/banner.png)](https://docs.hasdata.com/mcp-server/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme)
 
 # HasData MCP Server
 
@@ -8,7 +8,7 @@
 [![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
 [![MCP Badge](https://lobehub.com/badge/mcp/hasdata-hasdata-mcp)](https://lobehub.com/mcp/hasdata-hasdata-mcp)
 
-Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp) scraping and search APIs. Connect any MCP-compatible AI client to 63 ready-to-use data tools, or pick a single site from the [standalone servers](#one-site-per-server).
+Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme) scraping and search APIs. Connect any MCP-compatible AI client to 63 ready-to-use data tools, or pick a single site from the [standalone servers](#one-site-per-server).
 
 ---
 
@@ -17,7 +17,7 @@ Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=gith
 Two ways to authenticate:
 
 - **OAuth (recommended).** Connect the server and sign in with your HasData account in the browser — no key to copy around.
-- **API key.** Send your key in the `x-api-key` header. Get it from the [HasData dashboard](https://app.hasdata.com).
+- **API key.** Send your key in the `x-api-key` header. Get it from the [HasData dashboard](https://app.hasdata.com?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme).
 
 **Claude Desktop / Claude.ai.** Go to **Settings → Connectors → Add custom connector** and enter:
 
@@ -325,13 +325,13 @@ A few things worth knowing before you start:
 ## Billing
 
 Each tool call uses HasData credits the same way a direct API call would.
-See [Credits and Concurrency](https://hasdata.com/prices) for details.
+See [Credits and Concurrency](https://hasdata.com/prices?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme) for details.
 
 ---
 
 ## Resources
 
-- [HasData API Docs](https://docs.hasdata.com/mcp-server/?utm_source=github&utm_medium=syndication&utm_campaign=mcp)
-- [Dashboard](https://app.hasdata.com)
+- [HasData API Docs](https://docs.hasdata.com/mcp-server/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme)
+- [Dashboard](https://app.hasdata.com?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme)
 - [support@hasdata.com](mailto:support@hasdata.com)
 - [Discord](https://discord.com/invite/kckPcEdGWs) 
