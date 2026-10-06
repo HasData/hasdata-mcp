@@ -1,7 +1,7 @@
 {
   "name": "hasdata-mcp",
   "version": "1.0.0",
-  "description": "Comprehensive MCP server for web scraping and data extraction. 63 tools including Google Search, Amazon, Walmart, Zillow, TikTok, YouTube, and more.",
+  "description": "Comprehensive MCP server for web scraping and data extraction. Tools including Google Search, Amazon, Walmart, Zillow, TikTok, YouTube, and more.",
   "type": "module",
   "main": "src/index.js",
   "keywords": [

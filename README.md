@@ -3,12 +3,12 @@
 # HasData MCP Server
 
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-6366f1?style=flat-square)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-63-10b981?style=flat-square)](#tools)
+[![Tools](https://img.shields.io/badge/Tools-68-10b981?style=flat-square)](#tools)
 [![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-0ea5e9?style=flat-square)](https://mcp.hasdata.com/mcp)
 [![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
 [![MCP Badge](https://lobehub.com/badge/mcp/hasdata-hasdata-mcp)](https://lobehub.com/mcp/hasdata-hasdata-mcp)
 
-Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme) scraping and search APIs. Connect any MCP-compatible AI client to 63 ready-to-use data tools, or pick a single site from the [standalone servers](#one-site-per-server).
+Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme) scraping and search APIs. Connect any MCP-compatible AI client to ready-to-use data tools across search, e-commerce, maps, travel, real estate, jobs and social, or pick a single site from the [standalone servers](#one-site-per-server).
 
 ---
 
@@ -134,7 +134,7 @@ Any client that supports the [MCP streamable HTTP transport](https://modelcontex
 
 ## Tools
 
-63 tools across search, e-commerce, maps, travel, real estate, jobs, social, and more. Every group below also ships as standalone servers, one per site, with the same tools behind a shorter URL.
+Tools across search, e-commerce, maps, travel, real estate, jobs, social, and more. Every group below also ships as standalone servers, one per site, with the same tools behind a shorter URL.
 
 ### Web
 
@@ -167,11 +167,13 @@ Standalone server for this group: [web-scraping-mcp](https://github.com/HasData/
 | `google_maps_contributor_reviews` | Reviews by contributor ID |
 | `google_scholar_scholar` | Google Scholar search results |
 | `google_scholar_cite` | Citation formats for a Scholar result |
+| `google_scholar_case_law` | Full text of a Scholar case law opinion |
 | `google_trends_search` | Google Trends data |
 | `google_travel_flights` | Google Flights results |
+| `google_travel_flights_deals` | Flight deals from a plain-language trip description |
 | `google_travel_hotels` | Google Hotels results |
 
-Standalone servers for this group: [google-search-mcp](https://github.com/HasData/google-search-mcp) (all `google_serp_*` tools), [google-images-mcp](https://github.com/HasData/google-images-mcp), [google-maps-mcp](https://github.com/HasData/google-maps-mcp), [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp), [google-trends-mcp](https://github.com/HasData/google-trends-mcp), [google-flights-mcp](https://github.com/HasData/google-flights-mcp), [google-hotels-mcp](https://github.com/HasData/google-hotels-mcp).
+Standalone servers for this group: [google-search-mcp](https://github.com/HasData/google-search-mcp) (all `google_serp_*` tools), [google-images-mcp](https://github.com/HasData/google-images-mcp), [google-maps-mcp](https://github.com/HasData/google-maps-mcp), [google-scholar-mcp](https://github.com/HasData/google-scholar-mcp), [google-trends-mcp](https://github.com/HasData/google-trends-mcp), [google-flights-mcp](https://github.com/HasData/google-flights-mcp), [google-flights-deals-mcp](https://github.com/HasData/google-flights-deals-mcp), [google-hotels-mcp](https://github.com/HasData/google-hotels-mcp).
 
 ### Other search engines
 
@@ -181,6 +183,15 @@ Standalone servers for this group: [google-search-mcp](https://github.com/HasDat
 | `duckduckgo_serp` | DuckDuckGo Search results |
 
 Standalone servers for this group: [bing-mcp](https://github.com/HasData/bing-mcp), [duckduckgo-mcp](https://github.com/HasData/duckduckgo-mcp).
+
+### AI answer engines
+
+| Tool | Description |
+|---|---|
+| `chatgpt_chat` | ChatGPT answer with the web sources it cited |
+| `perplexity_chat` | Perplexity answer with its citations |
+
+Standalone server for this group: [chatgpt-mcp](https://github.com/HasData/chatgpt-mcp).
 
 ### E-commerce
 
@@ -244,6 +255,7 @@ Standalone servers for this group: [airbnb-mcp](https://github.com/HasData/airbn
 | `facebook_profile` | Facebook public page or profile details |
 | `instagram_profile` | Instagram public profile details |
 | `instagram_posts` | Instagram public account posts |
+| `instagram_comments` | Comments on an Instagram post |
 | `tiktok_profile` | TikTok public profile details |
 | `tiktok_posts` | TikTok account videos |
 | `tiktok_search` | TikTok search for videos or users |
