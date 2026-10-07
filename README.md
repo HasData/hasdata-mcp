@@ -4,6 +4,7 @@
 
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-6366f1?style=flat-square)](https://modelcontextprotocol.io)
 [![Tools](https://img.shields.io/badge/Tools-68-10b981?style=flat-square)](#tools)
+- [Prompts and resources](#prompts-and-resources)
 [![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-0ea5e9?style=flat-square)](https://mcp.hasdata.com/mcp)
 [![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
 [![MCP Badge](https://lobehub.com/badge/mcp/hasdata-hasdata-mcp)](https://lobehub.com/mcp/hasdata-hasdata-mcp)
@@ -268,6 +269,68 @@ Standalone servers for this group: [airbnb-mcp](https://github.com/HasData/airbn
 Standalone servers for this group: [facebook-mcp](https://github.com/HasData/facebook-mcp), [instagram-mcp](https://github.com/HasData/instagram-mcp), [tiktok-mcp](https://github.com/HasData/tiktok-mcp), [youtube-mcp](https://github.com/HasData/youtube-mcp).
 
 ---
+
+## Prompts and resources
+
+The server ships 20 prompts, ready-made workflows a client can offer instead of making the user compose a tool call.
+
+| Prompt | What it does |
+| --- | --- |
+| `google_search` | Search Google and summarize the top organic results. |
+| `google_news` | Find recent news coverage on a topic. |
+| `google_shopping` | Compare product offers from Google Shopping. |
+| `google_short_videos` | Find short videos about a topic. |
+| `google_ai_mode` | Get Google AI Mode's answer with its sources. |
+| `google_maps_search` | Find businesses and places on Google Maps. |
+| `google_maps_reviews` | Summarize what reviewers say about a place. |
+| `zillow_listings` | Find homes for sale, for rent or sold in an area. |
+| `zillow_property` | Get the full details of one Zillow property. |
+| `google_trends` | See how interest in a topic changes over time. |
+| `instagram_profile` | Look up a public Instagram profile. |
+| `scrape_web_page` | Fetch any public web page and summarize its content. |
+| `indeed_hiring_map` | See where a role is being hired for and at what salary. |
+| `youtube_search` | Find YouTube videos and channels about a topic. |
+| `youtube_transcript` | Summarize what is said in a YouTube video. |
+| `tiktok_trend` | See what is being posted on TikTok about a topic. |
+| `tiktok_profile` | Look up a public TikTok profile. |
+| `amazon_product_research` | Compare Amazon offers for a product by price, rating and review count. |
+| `yelp_reputation` | Pull a business's rating and recent review themes. |
+| `google_flights` | Compare flight options between two airports. |
+
+Alongside them the server exposes 149 resources, one per parameter whose accepted values are a fixed list, across 28 services. Reading one is cheaper than learning the vocabulary from a rejected call, and it costs no credits. Each URI is `hasdata://<service>/<parameter>`, and `resources/list` returns the current set.
+
+| Service | Parameters with a fixed list |
+| --- | ---: |
+| `redfin` | 30 |
+| `booking` | 16 |
+| `zillow` | 11 |
+| `google_serp` | 10 |
+| `youtube` | 10 |
+| `amazon` | 7 |
+| `google_travel` | 7 |
+| `bing` | 5 |
+| `duckduckgo` | 5 |
+| `glassdoor` | 5 |
+| `google_images` | 5 |
+| `google_trends` | 5 |
+| `google_maps` | 4 |
+| `google_scholar` | 4 |
+| `google_travel_flights` | 4 |
+| `google_travel_flights_deals` | 3 |
+| `walmart` | 3 |
+| `indeed` | 2 |
+| `web_scraping` | 2 |
+| `yellowpages` | 2 |
+| `yelp` | 2 |
+| `amazon_reviews` | 1 |
+| `amazon_search` | 1 |
+| `facebook` | 1 |
+| `google_travel_hotels` | 1 |
+| `tiktok` | 1 |
+| `walmart_reviews` | 1 |
+| `walmart_search` | 1 |
+
+Both lists are served without an API key, so a client can read them before a user has signed up.
 
 ## One site per server
 
