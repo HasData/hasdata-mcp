@@ -5,6 +5,14 @@ import { ListToolsRequestSchema, CallToolRequestSchema } from "@modelcontextprot
 const HASDATA_ENDPOINT = "https://mcp.hasdata.com/mcp";
 const API_KEY = process.env.HASDATA_API_KEY;
 
+// Fail closed if TLS certificate validation has been globally disabled,
+// preventing man-in-the-middle attacks against the HasData endpoint.
+if (process.env.NODE_TLS_REJECT_UNAUTHORIZED === "0") {
+  throw new Error(
+    "Refusing to start: NODE_TLS_REJECT_UNAUTHORIZED=0 disables TLS certificate validation."
+  );
+}
+
 const server = new Server(
   { name: "hasdata-mcp-bridge", version: "1.0.0" },
   { capabilities: { tools: {} } }
