@@ -1,0 +1,30 @@
+# The README is the catalogue of a remote server, so it goes stale without anyone touching this
+# repository. The schedule matters more than the push trigger: the tool list, the prompts and the
+# parameter-value resources all change upstream on their own.
+#
+# Unlike the per-service repositories, this suite needs no API key. initialize, tools/list,
+# prompts/list and resources/list are served without one, so the checks run the same on a fork.
+name: readme contract
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert the README still matches the live server
+        run: npm test

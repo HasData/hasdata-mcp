@@ -297,7 +297,7 @@ The server ships 20 prompts, ready-made workflows a client can offer instead of 
 | `yelp_reputation` | Pull a business's rating and recent review themes. |
 | `google_flights` | Compare flight options between two airports. |
 
-Alongside them the server exposes 149 resources, one per parameter whose accepted values are a fixed list, across 28 services. Reading one is cheaper than learning the vocabulary from a rejected call, and it costs no credits. Each URI is `hasdata://<service>/<parameter>`, and `resources/list` returns the current set.
+Alongside them the server exposes 151 resources, one per parameter whose accepted values are a fixed list, across 28 services. Reading one is cheaper than learning the vocabulary from a rejected call, and it costs no credits. Each URI is `hasdata://<service>/<parameter>`, and `resources/list` returns the current set.
 
 | Service | Parameters with a fixed list |
 | --- | ---: |
@@ -316,9 +316,9 @@ Alongside them the server exposes 149 resources, one per parameter whose accepte
 | `google_maps` | 4 |
 | `google_scholar` | 4 |
 | `google_travel_flights` | 4 |
+| `indeed` | 4 |
 | `google_travel_flights_deals` | 3 |
 | `walmart` | 3 |
-| `indeed` | 2 |
 | `web_scraping` | 2 |
 | `yellowpages` | 2 |
 | `yelp` | 2 |
