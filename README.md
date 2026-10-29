@@ -9,7 +9,7 @@
 [![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
 [![MCP Badge](https://lobehub.com/badge/mcp/hasdata-hasdata-mcp)](https://lobehub.com/mcp/hasdata-hasdata-mcp)
 
-Model Context Protocol server for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme) scraping and search APIs. Connect any MCP-compatible AI client to ready-to-use data tools across search, e-commerce, maps, travel, real estate, jobs and social, or pick a single site from the [standalone servers](#one-site-per-server).
+[Model Context Protocol server](https://hasdata.com/integrations/mcp?utm_source=github&utm_medium=syndication&utm_campaign=hasdata-mcp&utm_content=readme-intro) for [HasData](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=mcp&utm_content=hasdata-mcp-readme) scraping and search APIs. Connect any MCP-compatible AI client to ready-to-use data tools across search, e-commerce, maps, travel, real estate, jobs and social, or pick a single site from the [standalone servers](#one-site-per-server).
 
 ---
 
