@@ -3,7 +3,7 @@
 # HasData MCP Server
 
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-6366f1?style=flat-square)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-68-10b981?style=flat-square)](#tools)
+[![Tools](https://img.shields.io/badge/Tools-74-10b981?style=flat-square)](#tools)
 - [Prompts and resources](#prompts-and-resources)
 [![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-0ea5e9?style=flat-square)](https://mcp.hasdata.com/mcp)
 [![hasdata-mcp MCP server](https://glama.ai/mcp/servers/HasData/hasdata-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/hasdata-mcp)
@@ -170,6 +170,7 @@ Standalone server for this group: [web-scraping-mcp](https://github.com/HasData/
 | `google_scholar_cite` | Citation formats for a Scholar result |
 | `google_scholar_case_law` | Full text of a Scholar case law opinion |
 | `google_trends_search` | Google Trends data |
+| `google_finance_finance` | Google Finance quote by ticker |
 | `google_travel_flights` | Google Flights results |
 | `google_travel_flights_deals` | Flight deals from a plain-language trip description |
 | `google_travel_hotels` | Google Hotels results |
@@ -191,6 +192,7 @@ Standalone servers for this group: [bing-mcp](https://github.com/HasData/bing-mc
 |---|---|
 | `chatgpt_chat` | ChatGPT answer with the web sources it cited |
 | `perplexity_chat` | Perplexity answer with its citations |
+| `gemini_chat` | Google Gemini answer with the web sources it cited |
 
 Standalone server for this group: [chatgpt-mcp](https://github.com/HasData/chatgpt-mcp).
 
@@ -246,6 +248,9 @@ Standalone servers for this group: [indeed-mcp](https://github.com/HasData/indee
 | `yelp_reviews` | Yelp place reviews |
 | `yellowpages_search` | YellowPages search results |
 | `yellowpages_place` | YellowPages place details |
+| `tripadvisor_search` | Tripadvisor search for places |
+| `tripadvisor_place` | Tripadvisor place details |
+| `tripadvisor_reviews` | Tripadvisor place reviews |
 
 Standalone servers for this group: [airbnb-mcp](https://github.com/HasData/airbnb-mcp), [booking-mcp](https://github.com/HasData/booking-mcp), [yelp-mcp](https://github.com/HasData/yelp-mcp), [yellowpages-mcp](https://github.com/HasData/yellowpages-mcp).
 
@@ -256,6 +261,7 @@ Standalone servers for this group: [airbnb-mcp](https://github.com/HasData/airbn
 | `facebook_profile` | Facebook public page or profile details |
 | `instagram_profile` | Instagram public profile details |
 | `instagram_posts` | Instagram public account posts |
+| `instagram_reels` | Instagram public account reels |
 | `instagram_comments` | Comments on an Instagram post |
 | `tiktok_profile` | TikTok public profile details |
 | `tiktok_posts` | TikTok account videos |
@@ -297,7 +303,7 @@ The server ships 20 prompts, ready-made workflows a client can offer instead of 
 | `yelp_reputation` | Pull a business's rating and recent review themes. |
 | `google_flights` | Compare flight options between two airports. |
 
-Alongside them the server exposes 151 resources, one per parameter whose accepted values are a fixed list, across 28 services. Reading one is cheaper than learning the vocabulary from a rejected call, and it costs no credits. Each URI is `hasdata://<service>/<parameter>`, and `resources/list` returns the current set.
+Alongside them the server exposes 159 resources, one per parameter whose accepted values are a fixed list, across 30 services. Reading one is cheaper than learning the vocabulary from a rejected call, and it costs no credits. Each URI is `hasdata://<service>/<parameter>`, and `resources/list` returns the current set.
 
 | Service | Parameters with a fixed list |
 | --- | ---: |
